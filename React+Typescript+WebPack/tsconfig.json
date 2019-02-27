@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "allowJs": true,
+    "strict": true,
+    "sourceMap": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react"
+  },
+  "lib": [
+    "dom",
+    "es5",
+    "es2015.promise",
+    //below is required by saga
+    "es2015.iterable"
+  ],
+  "compileOnSave": false,
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}
