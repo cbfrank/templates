@@ -5,6 +5,7 @@
   "scripts": {
     "update-pkg": "updates -u",
     "build": "webpack --config webpack.config.ts --mode=development",
+    "build:w": "webpack --config webpack.config.ts --mode=development --watch=true",
     "build:prod": "webpack --config webpack.config.ts --mode=production"
   },
   "author": "Frank",

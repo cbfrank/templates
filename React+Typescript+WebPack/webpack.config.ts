@@ -2,7 +2,7 @@
 import * as path from "path";
 declare var __dirname;
 
-function createConfig(isProd: boolean): webpack.Configuration {
+function createConfig(isProd: boolean, watch: boolean): webpack.Configuration {
     return {
         entry: "./ClientApp/app.tsx",
         output: {
@@ -46,14 +46,18 @@ function createConfig(isProd: boolean): webpack.Configuration {
             jquery: "jQuery",
             bootstrap: "bootstrap"
         },
-        devtool: isProd ? "cheap-module-source-map" : "cheap-module-eval-source-map"
+        devtool: isProd ? "cheap-module-source-map" as any : "cheap-module-eval-source-map",
+        watch: watch,
+        watchOptions: {
+            ignored: ["node_modules"]
+        }
     };
 }
 
 export default (env, options) => {
     //console.log(`webpack env: ${JSON.stringify(env, null, 4)}`);
     //console.log(`webpack options: ${JSON.stringify(options, null, 4)}`);
-    const config = createConfig(options.mode !== "development");
+    const config = createConfig(options.mode !== "development", options.watch ? true : false);
     console.log(`options.mode is ${options.mode}`);
     console.log(`config.devtool is ${config.devtool}`);
     return config;
