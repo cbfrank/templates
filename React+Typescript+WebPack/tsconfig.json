@@ -10,7 +10,9 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "jsx": "react"
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true // default value is module === "system" or --esModuleInterop, just declare it explicit
   },
   "lib": [
     "dom",

@@ -7,6 +7,7 @@ function createConfig(isProd: boolean, watch: boolean): webpack.Configuration {
         entry: "./ClientApp/app.tsx",
         output: {
             path: path.resolve(__dirname, "./wwwroot/dist/javascripts"),
+            publicPath: "/dist/javascripts/", //this is required if the output js fila are splited into chunk, this url is the chunk js files path to the html page
             filename: "react-app.js"
         },
         module: {
